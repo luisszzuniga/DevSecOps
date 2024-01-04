@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: votre_mot_de_passe
+      MYSQL_DATABASE: nom_de_votre_base_de_donnees
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
+
+  nodejs1:
+    image: votre_image_nodejs
+    depends_on:
+      - mariadb
+    networks:
+      - backend
+
+  nodejs2:
+    image: votre_image_nodejs
+    depends_on:
+      - mariadb
+    networks:
+      - backend
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - nodejs1
+      - nodejs2
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  db_data:
