@@ -22,4 +22,5 @@ RUN pnpm build
 
 EXPOSE 3000
 
-CMD ["pnpm", "start:prod"]
+RUN chmod +x scripts/init.sh
+ENTRYPOINT ["scripts/init.sh"]
