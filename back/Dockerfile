@@ -12,7 +12,7 @@ COPY package*.json pnpm-lock.yaml ./
 COPY .env.example .env
 ENV NODE_ENV=production
 ENV PORT=3000
-ENV DB_HOST=localhost
+ENV DB_HOST=mariadb
 ENV DB_PORT=3306
 ENV DB_USERNAME=YOUR_MYSQL_USER_HERE
 ENV DB_PASSWORD=YOUR_USER_PW_HERE
