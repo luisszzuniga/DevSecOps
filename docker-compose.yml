@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mariadb:
@@ -10,12 +10,12 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     expose:
-        - "40000"
+      - "40000"
     ports:
-        - "40000:3306"
+      - "40000:3306"
     volumes:
-     - db_data:/var/lib/mysql
-     - ./init-db:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
     networks:
       backend:
 
@@ -28,7 +28,7 @@ services:
       - "40001:80"
     environment:
       - PMA_HOST=mariadb
-      - PMA_PORT=3306 
+      - PMA_PORT=3306
     networks:
       backend:
 
@@ -55,7 +55,7 @@ services:
   #     - backend
 
   # nginx:
-  #   build: 
+  #   build:
   #     context: ./Nginx
   #   ports:
   #     # - "80:80"
@@ -64,7 +64,7 @@ services:
   #     - ./Nginx/nginx.conf:/etc/nginx/nginx.conf
   #   depends_on:
   #     - nodejs1
-      # - nodejs2
+  # - nodejs2
 
 networks:
   backend:
