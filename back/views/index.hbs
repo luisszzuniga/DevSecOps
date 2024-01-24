@@ -3,21 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <title>DevSecOps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <form action="/send" method="post">
-      <input type="text" name="firstname" placeholder="Prénom" required />
-      <input type="text" name="lastname" placeholder="Nom" required />
-      <br /><br />
-      
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="tel" name="phone" placeholder="Téléphone" required />
-      <br /><br />
-      
-      <input type="date" name="birthdate" placeholder="Date de naissance" required /> <br /><br />
-      <input type="text" name="address" placeholder="Adresse" required /> <br /><br />
+    <section class="w-screen h-screen flex justify-center items-center">
+      <form action="/send" method="post" class="flex flex-col items-center">
+          <label for="firstname" class="relative w-full mb-3 block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+            <input type="text" name="firstname" placeholder="Prénom" class="peer w-full py-2 px-4 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0" required />
+            <span class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">Prénom</span>
+          </label>
 
-      <input type="submit" value="Envoyer" />
-    </form>
+          <label for="lastname" class="relative w-full mb-5 block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+            <input type="text" name="lastname" placeholder="Nom" class="peer w-full py-2 px-4 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0" required />
+            <span class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">Nom</span>
+          </label>
+
+          <div class="flex gap-3 mb-5">
+              <label for="email" class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                  <input type="email" name="email" placeholder="Email" class="peer w-full py-2 px-4 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0" required />
+                  <span class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">Email</span>
+              </label>
+              <label for="phone" class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+                  <input type="tel" name="phone" placeholder="Téléphone" class="peer w-full py-2 px-4 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0" required />
+                  <span class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">Téléphone</span>
+              </label>
+          </div>
+
+          <label for="birthdate" class="relative w-full mb-3 block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+              <input type="date" name="birthdate" placeholder="Date de naissance" class="peer w-full py-2 px-4 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0" required />
+              <span class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">Date de naissance</span>
+          </label>
+
+          <label for="address" class="relative w-full mb-5 block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600">
+              <input type="text" name="address" placeholder="Adresse" class="peer w-full py-2 px-4 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0" required />
+              <span class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">Adresse</span>
+          </label>
+
+          <input type="submit" value="Envoyer" class="inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-indigo-700 focus:outline-none focus:ring active:text-indigo-500" />
+        </form>
+    </section>
   </body>
 </html>
