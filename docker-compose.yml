@@ -37,8 +37,8 @@ services:
       - mariadb
     networks:
       - backend
-    volumes:
-      - ./back:/usr/src/app
+    # volumes:
+    #   - ./back:/usr/src/app
 
   # nodejs2:
   #   image: votre_image_nodejs

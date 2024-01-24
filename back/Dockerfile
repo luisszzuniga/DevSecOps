@@ -7,6 +7,15 @@ WORKDIR /usr/src/app
 # Step 3: Copy the package.json and package-lock.json (if available)
 COPY package*.json ./
 
+COPY .env.example .env
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV DB_HOST=localhost
+ENV DB_PORT=3306
+ENV DB_USERNAME=YOUR_MYSQL_USER_HERE
+ENV DB_PASSWORD=YOUR_USER_PW_HERE
+ENV DB_DATABASE=nest
+
 # Step 4: Install dependencies
 RUN npm install
 

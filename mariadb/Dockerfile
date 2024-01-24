@@ -7,6 +7,12 @@ FROM mariadb:10.6
 # Copier le script d'initialisation pour créer des utilisateurs
 COPY ./initdb-script.sh /docker-entrypoint-initdb.d/
 
+# Copier le script SQL pour créer la table
+COPY create-nest-table.sql /path/to/create-table-nest.sql
+
+# Copier le script d'initialisation
+COPY initdb-script.sh /docker-entrypoint-initdb.d/
+
 # Exposer le port de MariaDB
 EXPOSE 3306
 
@@ -15,3 +21,4 @@ VOLUME ["/var/lib/mysql"]
 
 # Utiliser le script de démarrage par défaut de MariaDB
 CMD ["mysqld"]
+CMD ["initdb-script.sh"]
