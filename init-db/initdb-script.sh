@@ -27,4 +27,4 @@ set -e
 echo "Running custom initialization scripts..."
 
 # Exécuter le script SQL pour créer la table
-mysql < /path/to/create-database.sql
+mysql < ./create-database.sql

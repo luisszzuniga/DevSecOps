@@ -14,9 +14,9 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV DB_HOST=mariadb
 ENV DB_PORT=3306
-ENV DB_USERNAME=YOUR_MYSQL_USER_HERE
-ENV DB_PASSWORD=YOUR_USER_PW_HERE
-ENV DB_DATABASE=nest
+ENV DB_USERNAME=root
+ENV DB_PASSWORD=root
+ENV DB_DATABASE=devsecops
 
 # Step 4: Install dependencies
 RUN pnpm install
@@ -25,10 +25,10 @@ RUN pnpm install
 COPY . .
 
 # Step 6: Build the NestJS application
-RUN pnpm run build
+RUN pnpm build
 
 # Step 7: Expose port 3000 to the outside world
 EXPOSE 3000
 
 # Step 8: Define the command to run the app
-CMD ["pnpm", "run", "start:prod"]
+CMD ["pnpm", "start:prod"]
