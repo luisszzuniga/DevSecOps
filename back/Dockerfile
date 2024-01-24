@@ -1,25 +1,23 @@
-# Utilisez une image Node.js comme image de base
-FROM node:17-alpine
-# Installez pnpm globalement
-RUN npm install -g pnpm
+# Step 1: Use an official Node.js runtime as a parent image
+FROM node:16-alpine
 
-# Créez un répertoire de travail dans le conteneur
-WORKDIR /app
+# Step 2: Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Copiez les fichiers package.json et pnpm-lock.yaml dans le répertoire de travail
-COPY package.json pnpm-lock.yaml ./
+# Step 3: Copy the package.json and package-lock.json (if available)
+COPY package*.json ./
 
-# Installez les dépendances de l'application avec pnpm
-RUN pnpm install
+# Step 4: Install dependencies
+RUN npm install
 
-# Effectuez la migration de la base de données
-RUN pnpm typeorm migration:run
-
-# Copiez le reste des fichiers de l'application dans le conteneur
+# Step 5: Copy the rest of your application's source code
 COPY . .
 
-# Exposez le port sur lequel votre application NestJS s'exécutera
+# Step 6: Build the NestJS application
+RUN npm run build
+
+# Step 7: Expose port 3000 to the outside world
 EXPOSE 3000
 
-# Commande pour démarrer l'application en mode production
-CMD ["pnpm", "run", "start:dev"]
+# Step 8: Define the command to run the app
+CMD ["npm", "run", "start:prod"]
