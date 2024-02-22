@@ -1,0 +1,7 @@
+CREATE OR REPLACE USER 'admin'@'%' IDENTIFIED BY 'admin_password';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+CREATE USER 'app_user'@'%' IDENTIFIED BY 'app_password';
+GRANT CREATE, SELECT, INSERT, UPDATE, DELETE ON `devsecops`.* TO 'app_user'@'%';
+FLUSH PRIVILEGES;
