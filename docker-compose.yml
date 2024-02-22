@@ -17,6 +17,7 @@ services:
       - db_data:/var/lib/mysql
       - ./mariadb:/docker-entrypoint-initdb.d
       - ./mariadb/encryption.cnf:/etc/mysql/conf.d/encryption.cnf
+      - ./mariadb/compress.cnf:/etc/mysql/conf.d/compress.cnf
       - ./mariadb/keys.enc:/etc/mysql/conf.d/keys.enc
     networks:
       backend:
