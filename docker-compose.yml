@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: devsecops
       MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+      MYSQL_PASSWORD: admin_password
     expose:
       - "40000"
     ports:
@@ -47,27 +47,33 @@ services:
         condition: service_started
     networks:
       backend:
-    # volumes:
-    #   - ./back:/usr/src/app
 
-  # nodejs2:
-  #   image: votre_image_nodejs
-  #   depends_on:
-  #     - mariadb
-  #   networks:
-  #     - backend
+  nodejs2:
+    build: ./back
+    restart: always
+    expose:
+      - "40003"
+    ports:
+      - "40003:3000"
+    depends_on:
+      mariadb:
+        condition: service_started
+    networks:
+      backend:
 
-  # nginx:
-  #   build:
-  #     context: ./Nginx
-  #   ports:
-  #     # - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./Nginx/nginx.conf:/etc/nginx/nginx.conf
-  #   depends_on:
-  #     - nodejs1
-  # - nodejs2
+  nginx:
+    build:
+      context: ./Nginx
+    ports:
+      - "40004:80"
+      - "443:443"
+    volumes:
+      - ./Nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - nodejs1
+      - nodejs2
+    networks:
+      backend:
 
 networks:
   backend:
