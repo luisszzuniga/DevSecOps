@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f120a1a-207f-4aac-bf96-ef0094c8a255" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/back/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/back/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/back/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/config.env" beforeDir="false" afterPath="$PROJECT_DIR$/back/config.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init-db/initdb-script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/init-db/initdb-script.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mariadb/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb/Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="4f120a1a-207f-4aac-bf96-ef0094c8a255" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +67,7 @@
       <workItem from="1706124890288" duration="38000" />
       <workItem from="1706869498988" duration="682000" />
       <workItem from="1708587815305" duration="667000" />
-      <workItem from="1708589068650" duration="1433000" />
+      <workItem from="1708589068650" duration="1772000" />
     </task>
     <servers />
   </component>

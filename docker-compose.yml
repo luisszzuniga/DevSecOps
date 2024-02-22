@@ -15,7 +15,7 @@ services:
       - "40000:3306"
     volumes:
       - db_data:/var/lib/mysql
-      - ./init-db:/docker-entrypoint-initdb.d
+      - ./mariadb:/docker-entrypoint-initdb.d
     networks:
       backend:
 

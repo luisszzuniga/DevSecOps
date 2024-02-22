@@ -27,3 +27,9 @@ H
 init-db/create-users.sql,d/8/d8dc4de61b7ffddab02cb1e9e782003b256e782a
 @
 Nginx/Dockerfile,a/6/a635ce30d5d33f09bf6c13f1dbfb340a3c6c0361
+J
+back/src/app.controller.ts,8/2/82a7cf4667635c2d25f467faef1d7eb4e579a77a
+K
+back/src/users/users.dto.ts,8/a/8af34979819a286e11ae5b4669efd14f2dad07e4
+O
+back/src/users/users.service.ts,d/6/d684a2df82e0d8765b1047670908eb6d3f0db060
